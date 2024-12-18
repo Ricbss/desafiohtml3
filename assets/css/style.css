@@ -1,0 +1,271 @@
+/* Resetando margens e paddings e aplicando box-sizing para garantir um layout consistente */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo a fonte global */
+body,
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    line-height: 1.6;
+    height: 100vh;
+    /* Garante que o body ocupe toda a altura da tela */
+    margin: 0;
+    /* Remove a margem padrão */
+    position: relative;
+    /* Permite o uso de posicionamento absoluto para o botão */
+}
+
+/* Estilos para listas e links */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    color: #007bff;
+    /* Cor mais visível para links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo da barra superior */
+.bar {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+}
+
+/* Layout principal da página */
+.content {
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) 2.5fr minmax(0, 15rem);
+    grid-template-areas: "sidebar main anchors";
+    gap: 3rem;
+    padding: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+footer .footer-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 0;
+}
+
+footer .footer-links a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Container para logo e barra de pesquisa */
+.logo-search-container {
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente */
+    justify-content: space-between;
+    /* Espaço entre logo e barra */
+    padding: 15px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    /* Linha sutil abaixo */
+    max-width: 1440px;
+    margin: auto;
+    gap: 20px;
+    /* Espaço maior entre logo e barra */
+}
+
+/* Estilo da logo */
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilo da barra de pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    /* Alinha o botão e o campo de texto */
+    gap: 10px;
+    /* Espaçamento maior entre os elementos */
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 300px;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #007bff;
+    /* Foco mais visível */
+    outline: none;
+}
+
+.search-bar button {
+    padding: 12px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+    /* Efeito de hover para o botão */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .logo-search-container {
+        flex-direction: column;
+        /* Empilhar logo e barra de pesquisa em telas menores */
+        align-items: flex-start;
+    }
+
+    .search-bar input {
+        width: 100%;
+        /* Barra de pesquisa ocupa a tela inteira */
+    }
+
+    .search-bar button {
+        width: 100%;
+        /* Botão ocupa a tela inteira também */
+    }
+}
+
+/* Estilos para o conteúdo central (principal) */
+.main {
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.anchors {
+    border-left: solid 1px #cdcdcd;
+    padding-left: 15px;
+}
+
+.anchors h2 {
+    font-size: 1.5rem;
+}
+
+.anchors ul li {
+    margin: 5px 0;
+}
+
+.anchors ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.anchors ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Espaçamento para os títulos h1, h2 e h3 */
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    /* Espaçamento acima do título */
+    margin-bottom: 15px;
+    /* Espaçamento abaixo do título */
+}
+
+/* Ajustes específicos para cada título */
+h1 {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    /* Maior espaçamento para o h1 */
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 25px;
+    /* Maior espaçamento para o h2 */
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+iframe {
+    margin-top: 20px;
+}
+
+.botaovoltar {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
